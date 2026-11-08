@@ -1,0 +1,127 @@
+[
+  {
+    "question": "决策树为什么要剪枝？",
+    "reference": "为了防止过拟合、提升泛化能力。分预剪枝和后剪枝两种。",
+    "must_contain": "过拟合",
+    "key_points": [],
+    "type": "single"
+
+  },
+  {
+    "question": "泛化是什么？",
+    "reference": "模型在没见过的新样本上也表现良好的能力。",
+    "must_contain": "新样本",
+    "key_points": [],
+    "type": "single"
+  },
+  {
+    "question": "信息熵是用来衡量什么的？",
+    "reference": "衡量一个集合的混乱程度/不确定性。熵越小越纯，全同一类时熵为0，类别对半分时熵最大。",
+    "must_contain": "熵",
+    "key_points": [],
+    "type": "single"
+  },
+  {
+    "question": "什么是过拟合？",
+    "reference": "模型把训练数据学得太死，连噪声也记下来，表现为训练误差很小但泛化误差大。",
+    "must_contain": "过拟合",
+    "key_points": [],
+    "type": "single"
+  },
+  {
+    "question": "对数几率回归是做回归还是分类？",
+    "reference": "名字叫回归，实际是做分类。通过套Sigmoid把线性输出压成0~1的概率来分类。",
+    "must_contain": "Sigmoid",
+    "key_points": [],
+    "type": "single"
+  },
+  {
+    "question": "预剪枝和后剪枝的区别是什么？",
+    "reference": "预剪枝在建树时判断是否划分，快但可能欠拟合；后剪枝先建完整棵树再自底向上剪，开销大但泛化通常更好。",
+    "must_contain": "",
+    "key_points": ["预剪枝", "后剪枝"],
+    "type": "multi"
+  },
+  {
+    "question": "随机森林和XGBoost都基于决策树，它们有什么不同？",
+    "reference": "随机森林是一堆独立的树投票（Bagging，降方差）；XGBoost是一串树接力纠正前面的残差（Boosting，降偏差）。",
+    "must_contain": "",
+    "key_points": ["Bagging", "Boosting", "降方差", "降偏差"],
+    "type": "multi"
+  },
+  {
+    "question": "请解释Transformer架构中的自注意力机制。",
+    "type": "out_of_scope",
+    "reference": "资料中未提及。",
+    "must_contain": "",
+    "key_points": []
+  },
+  {
+    "question": "支持向量机的核技巧是什么？",
+    "type": "out_of_scope",
+    "reference": "资料仅在第5章预告中提到SVM将讲核技巧，但未展开说明。",
+    "must_contain": "",
+    "key_points": []
+  },
+  {
+    "question": "贝叶斯决策论是什么",
+    "type": "out_of_scope",
+    "reference": "资料中未提及。",
+    "must_contain": "",
+    "key_points": []
+  },
+  {
+    "question": "决策树有哪几种划分选择的度量？分别对应什么算法？",
+    "reference": "信息增益（ID3）、增益率（C4.5）、基尼指数（CART）。核心都是找划分后最纯的属性。",
+    "key_points": ["信息增益", "增益率", "基尼", "ID3", "C4.5", "CART"],
+    "type": "multi"
+  },
+  {
+    "question": "留出法、交叉验证、自助法各适合什么场景？",
+    "reference": "留出法简单快，数据量足够时用；交叉验证更稳定可靠，常用10折；自助法适合小数据集，但会改变数据分布。",
+    "key_points": ["留出", "交叉验证", "自助"],
+    "type": "multi"
+  },
+  {
+    "question": "为什么单个感知机学不会异或，多层网络却可以？",
+    "reference": "异或线性不可分，单个感知机本质是一条直线分不开；加隐层能把数据映射到新空间使其线性可分。",
+    "key_points": ["线性不可分", "隐层", "线性可分"],
+    "type": "multi"
+  },
+  {
+    "question": "线性回归和对数几率回归分别用什么方法求解参数？为什么不一样？",
+    "type": "multi",
+    "reference": "线性回归用最小二乘法（误差平方和最小，有闭式解）；对数几率回归用极大似然估计（让观测数据出现概率最大，无闭式解，靠梯度下降）。不同是因为对率回归套了Sigmoid、输出是概率，用概率语言的极大似然更自然。",
+    "must_contain": "",
+    "key_points": ["最小二乘", "极大似然"]
+  },
+  {
+    "question": "处理类别不平衡问题有哪些常用方法？",
+    "type": "multi",
+    "reference": "欠采样（丢掉部分多数类样本）、过采样（增加少数类，如SMOTE插值造新样本）、阈值移动/再缩放（按类别比例调整决策阈值）。",
+    "must_contain": "",
+    "key_points": ["欠采样", "过采样", "阈值移动"]
+  },
+  {
+    "question": "偏差和方差分别对应欠拟合还是过拟合？模型复杂度如何影响它们？",
+    "type": "multi",
+    "reference": "偏差大对应欠拟合（模型太简单、拟合能力弱）；方差大对应过拟合（模型太复杂、对训练数据太敏感）。随复杂度增加，偏差降、方差升，泛化误差呈U形。",
+    "must_contain": "",
+    "key_points": ["偏差", "方差", "欠拟合", "过拟合"]
+  },
+  {
+    "question": "跳出局部极小有哪些常用策略？",
+    "type": "multi",
+    "reference": "用多组不同初始参数分别训练取最好；随机梯度下降(SGD)引入随机扰动帮助甩出小坑；动量法给下降加惯性冲过小坑。",
+    "must_contain": "",
+    "key_points": ["初始值", "随机梯度下降", "动量"]
+  },
+  {
+    "question": "多分类学习有哪三种拆分策略？",
+    "type": "multi",
+    "reference": "一对一(OvO)：每两类训一个分类器再投票；一对其余(OvR)：每类对其余所有类训一个；多对多(MvM)：若干类为正若干为反，典型实现是ECOC纠错输出码。",
+    "must_contain": "",
+    "key_points": ["一对一", "一对其余", "多对多"]
+  }
+
+]

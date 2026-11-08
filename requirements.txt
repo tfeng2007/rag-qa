@@ -1,0 +1,6 @@
+
+sentence-transformers
+numpy
+python-dotenv
+anthropic
+chromadb

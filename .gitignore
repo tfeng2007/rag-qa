@@ -1,0 +1,16 @@
+# 环境与密钥
+venv/
+.env
+.env.*
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 模型缓存 / 向量库数据（又大又不该进仓库）
+.cache/
+chroma_db/
+*.sqlite3
+
+# IDE
+.idea/
